@@ -1,4 +1,11 @@
-import {GENERATE_AURAL_UPDATE, generateAuralUpdate, RESTART_GAME, restartGame, MAKE_GUESS, makeGuess} from './actions';
+import {
+	GENERATE_AURAL_UPDATE, 
+	generateAuralUpdate, 
+	RESTART_GAME, 
+	restartGame, 
+	MAKE_GUESS, 
+	makeGuess
+} from './actions';
 
 describe('generateAuralUpdate', () => {
 	it('Should return the action', () => {
@@ -9,8 +16,10 @@ describe('generateAuralUpdate', () => {
 
 describe('restartGame', () => {
 	it('Should return the action', () => {
-		const action = restartGame();
+		const correctAnswer = 50;
+		const action = restartGame(correctAnswer);
 		expect(action.type).toEqual(RESTART_GAME);
+		expect(action.correctAnswer).toEqual(correctAnswer);
 	});
 });
 
